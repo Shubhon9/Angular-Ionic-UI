@@ -1,0 +1,59 @@
+<ion-header  >
+  <ion-toolbar color="primary" >
+    <ion-title>login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-row class="ion-padding"><img src="../../assets/images/logo.png"></ion-row>
+ <ion-grid>
+   <form [formGroup]="userForm" >
+  <ion-row style="font-size: 12px">
+    <ion-col>
+    <h3 class="ion-no-padding">Email Address</h3>
+    <mat-form-field appearance="outline" style="width:100%">
+    <input matInput placeholder="Placeholder" formControlName="emailId" #emailId >
+    <mat-error *ngIf="userForm.get('emailId')">Please enter a Valid Email</mat-error>
+    </mat-form-field>
+  </ion-col>
+  </ion-row>
+  <ion-row style="font-size: 12px">
+    <ion-col>
+    <h3 class="ion-no-padding">Password</h3>
+    <mat-form-field appearance="outline" style="width:100%">
+    <input matInput [type]="hide ? 'password' :'text'" placeholder="Placeholder" formControlName="password">
+    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+      <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+      
+    </button>
+    </mat-form-field>
+    <div class="ion-text-end" *ngIf='register==false'>
+    <mat-label>Forgot Password?</mat-label> 
+    </div>
+  </ion-col>
+  <ion-col *ngIf="register==true">
+    <h3 class="ion-no-padding">Confirm Password</h3>
+    <mat-form-field appearance="outline" style="width:100%">
+    <input matInput [type]="hide ? 'password' :'text'" placeholder="Placeholder"  #confirmPassword>
+    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+      <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+    </button>
+    </mat-form-field>
+  </ion-col>
+  </ion-row>
+  <ion-row style="font-size: 12px">
+    <ion-col>
+      <ion-button expand="full" type="submit" [disabled]="!userForm.valid" (click)="onSubmit()" >{{action}}</ion-button>
+      <div class="ion-text-center" *ngIf="register==false">
+        <mat-label>Don't have an account? <b style='color:#3880ff'slot="start" (click)="toggleAction(true,'Register')">Register</b></mat-label> 
+        </div>
+        <div class="ion-text-center" *ngIf="register==true">
+          <mat-label>Already have an account? <b style='color:#3880ff'slot="start" (click)="toggleAction(false,'Login')">Login</b></mat-label> 
+          </div>
+  </ion-col>
+  </ion-row>
+
+</form>  
+</ion-grid>
+
+</ion-content>

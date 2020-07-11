@@ -1,0 +1,61 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Explore</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-searchbar mode="ios"></ion-searchbar>
+  
+  <ion-grid >
+    <ion-text color="dark">
+      <h1 class="ion-text-center">Explore Categories</h1>
+    </ion-text>
+    
+    <ion-text color="primary">
+      
+      <h3 class="ion-text-end" style="margin-right:16px;margin-left:16px;" *ngIf='flag==false' (click)="getData('seeAll')">See All</h3>
+      <h3 class="ion-text-end" style="margin-right:16px;margin-left:16px;"*ngIf='flag==true' (click)="getData('seeLess')">See Less</h3>
+    </ion-text>
+  
+    <ng-container *ngFor="let i of exploreHeader,let count=index">
+    <ion-row *ngIf='count<=showData'>
+      
+      <ion-col size="4"   *ngFor="let j of i.rows">
+        <ion-card>
+          <ion-card-content >
+            <img src={{j.imageUrl}} class="custom">
+          </ion-card-content>
+        </ion-card>
+        <ion-text color="dark">
+          <h2 class="ion-text-center">{{j.name}}</h2>
+        </ion-text>
+      </ion-col>
+   
+     
+      <!-- <ion-col size="6" style="padding: 20px;" >
+        <ion-card>
+          <ion-card-content>
+            <img src="/assets/images/social_media.svg" width="150px" height="150px">
+          </ion-card-content>
+        </ion-card>
+        <ion-text color="dark">
+          <h2 class="ion-text-center">Social Media</h2>
+        </ion-text>
+      </ion-col>
+      <ion-col size="6" style="padding: 20px;">
+        <ion-card>
+        
+          <ion-card-content>
+            
+            <img src="/assets/images/sports.svg" width="150px" height="150px">
+          </ion-card-content>
+        </ion-card>
+        <ion-text color="dark">
+          <h2 class="ion-text-center">Sports</h2>
+        </ion-text>
+      </ion-col> -->
+    </ion-row>
+  </ng-container>
+  </ion-grid>
+</ion-content>

@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title class="ion-text-center">Home</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list >
+    <ion-item *ngFor='let topic of topics' class="ion-activatable ripple-parent" (click)="navigate(topic.id)">
+      <ion-avatar slot="start" >
+        <ion-ripple-effect ></ion-ripple-effect>
+        <ion-img src={{topic.imageUrl}}></ion-img>
+      </ion-avatar>
+      <ion-label style="margin-bottom: 0px;">
+        {{topic.topic}}
+        <p>{{topic.description}}</p>
+       </ion-label> 
+    </ion-item>
+  </ion-list>
+</ion-content>
