@@ -9,7 +9,7 @@ topics:Home[]
 
   constructor() {
     this.topics=[
-    {id:1,imageUrl:'/assets/images/youtube.png',topic:'Youtube Vs Tik Tok',description:'Which is better?'},
+    {id:1,imageUrl:'/assets/images/youtube.png',topic:'Youtube Vs Tik Tok',description:'Which is better'},
     {id:2,imageUrl:'/assets/images/election_2020.png',topic:'2020 Presidential Election',description:'Which candidate would make the best US president?'},
     {id:3,imageUrl:'/assets/images/energy_fossils.jpg',topic:'Alternative Energy vs. Fossil Fuels',description:'Can alternative energy effectively replace fossil fuels?'},
     {id:4,imageUrl:'/assets/images/animal_dissection.jpg',topic:'Animal Dissection',description:'Should K-12 Students Dissect Animals in Science Classrooms?'},
